@@ -24,5 +24,10 @@ WORKDIR /workspace
 # Expose the port for Jupyter Notebook
 EXPOSE $JUPYTER_PORT
 
+#Set up the kernel
+RUN python3 -m ipykernel install --user --name imaging_python_env --display-name "imaging python env"
+
+
+
 # Define the command to run Jupyter Notebook
 CMD ["jupyter", "notebook", "--no-browser", "--ip=0.0.0.0", "--port=${JUPYTER_PORT}", "--allow-root", "--NotebookApp.token=${JUPYTER_TOKEN}"]
