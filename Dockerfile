@@ -25,7 +25,7 @@ WORKDIR /workspace
 EXPOSE $JUPYTER_PORT
 
 #Set up the kernel
-RUN python3 -m ipykernel install --user --name imaging_python_env --display-name "imaging python env"
+RUN python3 -m ipykernel install --name imaging_python_env --display-name "imaging python env"
 
 
 
